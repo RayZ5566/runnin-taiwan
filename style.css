@@ -1,0 +1,233 @@
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+  text-align: center;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  background: #c07015;
+  color: white;
+  padding: 20px;
+  transition: background-color 0.3s;
+}
+
+.form-section {
+  margin: 30px auto;
+  padding: 20px;
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button {
+  background: #c07015;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background: #a05d12;
+}
+
+#result-msg {
+  margin-top: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* --- Dark Mode 樣式 --- */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+body.dark-mode header {
+  background-color: #222;
+}
+
+body.dark-mode .form-section {
+  background-color: #1e1e1e;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+body.dark-mode button {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark-mode button:hover {
+  background-color: #666;
+}
+
+/* --- Donate Section --- */
+.donate-section {
+  margin: 30px auto;
+  padding: 24px;
+  width: min(420px, 90vw);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+.donate-section h2 {
+  margin: 0 0 6px 0;
+  font-size: 1.25rem;
+}
+
+.donate-text {
+  margin: 6px 0 16px 0;
+  color: #444;
+}
+
+.qr-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 16px 0;
+}
+
+.qr-img {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+}
+
+.donate-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #0070ba; /* PayPal 藍 */
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .06s ease, opacity .2s ease;
+}
+
+.donate-btn:hover { opacity: 0.9; }
+.donate-btn:active { transform: scale(0.98); }
+
+/* Dark Mode 相容（沿用你現有的 dark-mode 架構） */
+body.dark-mode .donate-section {
+  background-color: #1e1e1e;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,0.08);
+}
+
+body.dark-mode .donate-text { color: #ccc; }
+
+body.dark-mode .qr-img {
+  background: #1e1e1e;
+  border-color: #555;
+}
+
+body.dark-mode .donate-btn {
+  background: #1580ff; /* 深色模式下稍亮，維持對比 */
+  color: #fff;
+}
+
+
+/* -------- 支援我們 區塊 -------- */
+.donate-section {
+  margin: 30px auto;
+  padding: 24px;
+  width: min(420px, 90vw);
+  background: white;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+.donate-section h2 {
+  margin: 0 0 6px;
+  font-size: 1.25rem;
+}
+
+.donate-text {
+  margin: 6px 0 16px;
+  color: #444;
+}
+
+.qr-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 16px;
+}
+
+.qr-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+}
+
+.donate-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #0070ba; /* PayPal 藍 */
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .05s ease, opacity .2s ease;
+}
+
+.donate-btn:hover { opacity: 0.9; }
+.donate-btn:active { transform: scale(0.98); }
+
+/* ---- 深色模式相容 ---- */
+body.dark-mode .donate-section {
+  background-color: #1e1e1e;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,0.08);
+}
+
+body.dark-mode .donate-text {
+  color: #ccc;
+}
+
+body.dark-mode .qr-img {
+  background: #1e1e1e;
+  border-color: #555;
+}
+
+body.dark-mode .donate-btn {
+  background: #1580ff;
+}
+
