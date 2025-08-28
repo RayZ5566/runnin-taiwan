@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rayz5566.github.io/runnin-taiwan/sitemap.xml
