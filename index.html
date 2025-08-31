@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Runnin Taiwan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="site-body dark-mode">
+  <header>
+    <h1>Runnin Taiwan</h1>
+    <p>If you would like to run a marathon in Taiwan<br>
+       Please feel free to ask
+    </p>
+  </header>
+
+  <!-- 切換暗色模式按鈕 -->
+  <button id="toggle-dark-mode">Dark Mode</button>
+
+  <section class="form-section">
+    <h2>Contact Us</h2>
+
+    <!--
+      重點：
+      1) action 一樣使用 FormSubmit（維持目前做法）
+      2) 加入 hidden inputs：_subject, _captcha, _template, _replyto(由JS同步), _to(保險)
+      3) 顯式 visitorEmail 欄位，郵件內文也會出現，雙重保險可回覆
+    -->
+    <form id="consult-form" action="https://formsubmit.co/runnintw@gmail.com" method="POST" autocomplete="on">
+      <!-- 使用者姓名 -->
+      <label for="name">姓名 Name：</label>
+      <input type="text" name="name" id="name" placeholder="Ex: Ray" required>
+
+      <!-- 使用者 Email（顯式欄位，會出現在郵件內文） -->
+      <label for="email">信箱 Email：</label>
+      <input type="email" name="email" id="email" placeholder="abc@email.com" required>
+
+      <!-- 問題內容 -->
+      <label for="question">您的問題 Your Question：</label>
+      <textarea name="question" id="question" placeholder="Please Leave Your Query&#10;EX:&#10;Which race you would like to participate?&#10;What kind of race you would like to find?" required></textarea>
+
+      <!-- Hidden：確保可以直接「回覆」來信（Reply-To），由 JS 將 #email 同步到此 -->
+      <input type="hidden" name="_replyto" id="hidden-replyto" value="">
+
+      <!-- Hidden：郵件主旨 -->
+      <input type="hidden" name="_subject" value="Runnin Taiwan - New Contact">
+
+      <!-- Hidden：郵件樣式（table 比較好讀） -->
+      <input type="hidden" name="_template" value="table">
+
+      <!-- Hidden：是否使用簡單驗證（用 JS 送，這裡關閉 captcha） -->
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- Hidden：保險指定寄送對象（action 已指定，此為雙重保險） -->
+      <input type="hidden" name="_to" value="runnintw@gmail.com">
+        <!-- 選擇性 but 建議：讓郵件好讀、可控 -->
+      <input type="hidden" name="_subject" value="Runnin Taiwan - New Contact">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      
+      <button type="submit">Submit</button>
+    </form>
+
+    <p id="result-msg"></p>
+    <p>Our Email: runnintw@gmail.com</p>
+  </section>
+<!-- Donate Section -->
+<section class="donate-section">
+  <h2>Support Us</h2>
+  <p class="donate-text">If you think it is helpful, please feel free to suuport us.</p>
+
+  <!-- QR 圖片：請把 src 換成你的 QR 圖檔路徑 -->
+  <div class="qr-wrap">
+    <img
+      src="My_Paypal_qrcode.png"
+      alt="PayPal 捐助 QR Code"
+      class="qr-img"
+      width="180"
+      height="180"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- 付款連結：把 href 換成你的 PayPal.me 或捐款連結 -->
+  <a
+    class="donate-btn"
+    href="https://www.paypal.com/ncp/payment/SA2Z9RWV6J7QC"
+    target="_blank"
+    rel="noopener"
+  >
+    Paypal
+  </a>
+
+  <!-- 補充：如果你想指定金額，可以改成
+       https://www.paypal.com/paypalme/YourPayPalID/150  (單位通常為你帳戶的主要幣別)
+  -->
+</section>
+
+<!-- Footer -->
+<body class="site-body">
+  ...
+  <footer class="site-footer">
+    <p>© 2025 runninTW. All rights reserved.</p>
+  </footer>
+</body>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
